@@ -1,0 +1,1627 @@
+*, *:after, *:before
+	box-sizing: border-box
+img
+	display: block
+button
+	background-color: transparent
+	outline: none
+svg
+	width: 100%
+	height: 100%
+html
+	font-size: 16px
+	+r(374)
+		font-size: 12px
+	+rm(767)
+		font-size: 22px
+body
+	overflow: hidden
+	font-family: $Book
+	&.navigation_show
+		.overlay
+			opacity: 1
+			visibility: visible
+		.menu
+			transform: translate(0, -100%)
+.root
+	height: 100%
+	a 
+		text-decoration: none
+	h1, .h1
+		font-family: $Bold
+		+rem(font-size, 36px)
+		span 
+			color: $maincolor
+	h2, .h2 
+		font-family: $Medium
+		+rem(font-size, 32px)
+		span 
+			color: $maincolor
+	h3, .h3
+		font-family: $Medium
+		+rem(font-size, 30px)
+		span 
+			color: $maincolor
+.overlay
+	position: absolute
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, .22)
+	z-index: 15
+	transition: opacity 0.3s linear, visibility  0.3s linear
+	opacity: 0
+	visibility: hidden
+.root_wrapper
+	height: 100%
+	position: relative
+	overflow: hidden
+.root_frame
+	overflow: auto
+	width: 100%
+	height: 100%
+.container-content
+.intro-head
+	position: relative
+	+rem(padding, 0 15px)
+	+rem(padding-top, 108px)
+	&.index-page
+		background-color: $maincolor
+		+rem(min-height, 563px)
+		.intro-head-container
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+		h1
+			position: absolute
+			+rem(bottom, 156px)
+			+rem(left, 15px)
+			color: $white
+			max-width: 90%
+			line-height: 1.35
+			span
+				color: $black
+	.intro-head-container
+		position: relative
+		height: 100%
+.mouse
+	position: absolute
+	+rem(left, 15px)
+	height: 43px
+	width: 29px
+	border: 3px solid $white
+	border-radius: 15px
+	+rem(bottom, 32px)
+	.mousewheel
+		width: 5px
+		height: 11px
+		background-color: $white
+		border-radius: 4px
+		position: absolute
+		top: 5px	
+		left: 9px
+		transform-origin: 50% 0
+		animation: mouse-wheel 1.25s infinite linear
+@keyframes mouse-wheel
+	0%,to
+		transform: scaleY(.4) translateY(0)
+	20%
+		transform: scaleY(1) translateY(0)
+	60%
+		transform: scaleY(.4) translateY(12px)
+.ui-menu
+	position: absolute
+	z-index: 910
+	right: 0
+	top: 0
+	+rem(padding, 32px 15px)
+	cursor: pointer
+	&:hover
+		.ui-menu-line
+			background-color: $darkHover
+		.ui-menu-line-2
+			transform: translate(-7px, 0)
+		.ui-menu-line-1
+			transform: translate(7px, 0)
+.index-page
+	.ui-menu-line
+		background-color: $white
+.ui-menu__content
+	+rem(width, 31px)
+	+rem(height, 25px)
+	display: block
+	position: relative
+	overflow: hidden
+.ui-menu-line
+	+rem(height, 4px)
+	width: 100%
+	background-color: $maincolor
+	position: absolute
+	right: 0
+	top: 0
+	border-radius: 1px
+	transition: transform 0.3s ease, background-color 0.3s ease
+	&-2
+		+rem(top, 11px)
+		+rem(right, -7px)
+	&-3
+		+rem(top, 21px)
+		+rem(right, -7px)
+.logo-container	
+	position: absolute
+	+rem(width, 153px)
+	+rem(top, 0px)
+	+rem(left, 15px)
+	z-index: 4
+	transition: left 0.3s linear
+	.logo
+		+rem(margin-top, 33px)
+		+rem(width, 153px)
+		+rem(height, 25px)
+		background-image: url("../img/icons/logo-black.png")
+		background-size: contain
+		background-repeat: no-repeat
+		display: block
+.index-page
+	.logo-container
+		.logo
+			background-image: url("../img/icons/logo-white.png")
+.lang
+	position: absolute
+	+rem(top, 50px)
+	+rem(left, 34px)
+	// +rem(height, 26px)
+	// +rem(width, 60px)
+	height: 42px
+	// width: 112px
+	.lang-inner
+		position: relative
+		width: 100%
+		height: 100%
+		background-color: $maindark
+		padding: 2px
+		// +rem(border-radius, 13px)
+		border-radius: 21px
+		font-size: 0
+		a
+			font-size: 18px
+			text-transform: uppercase
+			color: $white
+			display: inline-block
+			padding: 8px 15px
+			&.active
+				background-color: $white
+				color: $black
+				border-radius: 18px
+.cross-head
+	position: absolute
+	+rem(top, 33px)
+	+rem(right, 14px)
+	width: 25px
+	height: 25px
+	cursor: pointer
+	z-index: 5
+	&:hover
+		.cross-container
+			.cross
+				background-color: $maincolor
+.cross-container
+	width: 100%
+	height: 100%
+	position: relative
+	transition: transform 0.3s ease
+.cross
+	position: absolute
+	height: 4px
+	width: 100%
+	background-color: $dark
+	top: 50%
+	margin-top: -2px
+	backface-visibility: hidden
+	transition: background-color 0.3s ease
+	&.cross-1
+		transform: rotate(-45deg) scale(1.25)
+	&.cross-2
+		transform: rotate(45deg) scale(1.25)
+.menu
+	position: absolute
+	top: 100%
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: auto
+	background-color: $white
+	.menu_content
+	height: 100%
+	z-index: 999
+	transition: transform 0.3s ease-in-out
+	.lang
+		left: 50%
+		transform: translate(-50%, 0)
+		+rem(top, 24px)
+.account
+	position: absolute
+	+rem(top, 31px)
+	+rem(left, 15px)
+	width: 27px
+	height: 25px
+	.account-enter
+		width: 27px
+		height: 25px
+		display: block
+		.icon
+			width: 100%
+			height: 100%
+			display: block
+			background-image: url(../img/icons/personal-account.png)
+			background-size: contain
+.menu-elements
+	+rem(padding, 111px 0)
+	.menu-primary
+		.menu-primary_item
+			.menu-primary_item-link
+				font-family: $Bold
+				+rem(font-size, 30px)
+				text-align: center
+				display: block
+				+rem(padding, 12px 5px)
+				color: $black
+				&.active
+					color: $maincolor
+	.menu-secondary
+		+rem(padding-top, 13px)
+		.menu-secondary_item
+			.menu-secondary_item-link
+				font-family: $Medium
+				+rem(font-size, 24px)
+				text-align: center
+				display: block
+				+rem(padding, 14px 5px 13px)
+				color: $black
+				&.active
+					color: $maincolor
+	.menu-contacts
+		text-align: center
+		+rem(padding-top, 52px)
+		.address
+			+rem(margin-bottom, 50px)
+			.address-item
+				&:not(:last-child)
+					+rem(margin-bottom, 12px)
+				p, a 
+					font-family: $Book
+					+rem(font-size, 15px)
+					color: $black
+					text-transform: uppercase
+					+rem(letter-spacing, 0.6px)
+		.contacts-list
+			font-size: 0
+			.contacts-item
+				display: inline-block
+				vertical-align: top
+				position: relative
+				&:not(:last-child)
+					&::after
+						content: "."
+						position: absolute
+						bottom: 0
+						font-size: 12px
+						right: 0
+				a
+					font-family: $Book
+					+rem(font-size, 15px)
+					color: $dark
+					text-transform: uppercase
+					letter-spacing: 0.6px
+					padding: 0 17px
+					transition: color 0.3s linear
+					span
+						display: inline-block
+						vertical-align: middle
+					.icon
+						margin-right: 8px
+						svg
+							fill: $dark
+							transition: fill 0.3s linear
+					&:hover
+						color: $maincolor
+						.icon
+							svg
+								fill: $maincolor
+.icon-skype
+	width: 15px
+	height: 15px
+	display: inline-block
+	vertical-align: middle
+	svg
+		width: 100%
+		height: 100%
+.container 
+	width: 100%
+	font-size: 0
+	[class^=column-]
+		display: inline-block
+		vertical-align: top
+	.column-30
+		width: 33.33%
+	.column-40
+		width: 44.44%
+	.column-50
+		width: 50%
+	.column-60
+		width: 66.66%
+	.column-70
+		width: 70%
+	.column-100
+		width: 100%
+		display: block
+.icon-text-wrapp
+	+rem(margin-bottom, 35px)
+	+rem(padding-right, 5px)
+	img
+		+rem(margin-bottom, 24px)
+	p 
+		+rem(font-size, 20px)
+		line-height: 1.55
+
+	.icon-star
+		+rem(width, 60px)
+	.icon-wave
+		+rem(width, 65px)
+		+rem(margin-bottom, 41px)
+	.icon-mountain
+		+rem(width, 62px)
+	.title
+		font-family: $Medium
+
+	.icon-svg-wrapp
+		// +rem(height, 100px)
+		+rem(margin-bottom, 35px)
+		svg
+			width: auto
+		.icon-container
+			+rem(width, 115px)
+		.icon-tanker
+			+rem(width, 140px)
+		.icon-steel
+			+rem(width, 46px)
+		.icon-tank_car
+			+rem(width, 90px)
+		.icon-road_track
+			+rem(width, 130px)
+.more
+	+rem(font-size, 18px)
+	vertical-align: bottom;
+	span
+		border-bottom: 1px solid $maincolor
+		padding-bottom: 7px
+		transition: all 0.3s ease-out
+		color: $maincolor
+	svg
+		fill: $maincolor
+		width: 15px
+		vertical-align: text-top
+		padding-top: 9px
+		margin-left: 15px
+		transition: transform 0.3s ease, fill 0.3s ease
+	&:hover
+		span
+			border-color: transparent
+			color: #000
+		svg
+			transform: translate(10px, 0)
+			fill: #000
+.section
+	+rem(padding, 36px 15px)
+	h2, .h2
+		+rem(margin-bottom, 83px)
+	&.section-products
+		+rem(padding-top, 100px)
+		h2, .h2
+			text-align: center
+			+rem(margin-bottom, 42px)
+		.container
+			.column-30
+				width: 100%
+				+rem(margin-bottom, 33px)
+	&.section-news
+		h2, .h2
+			+rem(margin-bottom, 32px)
+			line-height: 1.3
+.page-link
+	display: block
+	+rem(height, 250px)
+	position: relative
+	+vertical
+	.text-link
+		// position: absolute
+		// top: 50%
+		// left: 50%
+		// transform: translate(-50%,-50%)
+		font-family: $Medium
+		padding-top: 11px
+		color: #000
+		transition: color 0.3s ease-out;
+		display: inline-block
+		vertical-align: middle
+		+rem(font-size, 24px)
+	.svg-full-wrapp
+		position: absolute
+		width: 50%
+		height: 50%
+		transform: scale(2)
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		margin: auto
+		transition: transform 0.3s ease-out;
+	&:hover
+		.svg-full-wrapp
+			transform: scale(1);
+		.text-link
+			color: $maincolor
+.news-item
+	padding: 0 15px
+	font-size: 2rem
+	display: inline-block
+	vertical-align: top
+	a
+		display: block
+		&:hover
+			img
+				// opacity: 0.5
+			.desc
+				color: $maincolor
+			.item-description:before
+				transform: translateX(50px)
+			.image-container
+				&::after
+					background-color: rgba(255, 255, 255, 0.5)
+	img 
+		width: 100%;
+		transition: opacity 0.3s ease-out
+	.date
+		font-family: $Book
+		+rem(font-size, 15px)
+		color: #000
+		+rem(padding-top, 30px)
+		letter-spacing: 0.8px
+	.desc
+		font-family: $Medium
+		+rem(font-size, 20px)
+		color: #000
+		transition: color 0.3s ease-out
+		+rem(padding-top, 16px)
+		line-height: 1.6
+	.item-description
+		+rem(padding-top, 27px)
+	.item-description:before
+		content: ' '
+		+rem(width, 140px)
+		height: 2px 
+		background-color: $maincolor
+		position: absolute;
+		transition: transform 0.3s ease
+	.image-container
+		overflow: hidden
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			background-color: rgba(255, 255, 255, 0)
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transition: background-color 0.3s ease
+	
+.slider-img
+	+rem(padding-bottom, 40px)
+	margin: 0 -15px
+	.slick-arrow 
+		display: none !important
+.btn-slider
+	padding-left: 3px
+	+clr
+	.btn-wrapp
+		width: 45px
+		display: inline-block
+		margin-top: 6px
+		&:first-child
+			// margin-right: 15px
+			float: left
+		&:last-child
+			// margin-left: 19px 
+			float: right
+		svg 
+			cursor: pointer
+			path
+				transition: stroke 0.3s ease-out;
+				stroke: $maincolor
+		.disable
+			path
+				stroke: #e7c0c1 !important
+		&:hover
+			svg 
+				path
+					stroke: #000
+.next-page
+	+rem(padding-top, 10px)
+	+rem(padding-right, 0)
+	+rem(padding-bottom, 43px)
+	// +rem(padding-left, 0)
+	padding-left: 22.2%
+	span
+		+rem(font-size, 15px)
+		font-family: $Book
+		text-transform: uppercase
+		position: relative
+		z-index: 5
+		color: #000
+		display: inline-block
+		+rem(margin-bottom, 3px)
+		letter-spacing: 0.9px
+	h2
+		position: relative
+		+rem(font-size, 40px)
+		z-index: 5
+		color: #000
+		transition: color 0.3s ease-out;
+		margin-bottom: 0
+	h2:before 
+		content: ''
+		+rem(width, 61px)
+		height: 2px
+		background-color: $maincolor
+		position: absolute
+		+rem(top, 7px)
+		bottom: 0
+		margin: auto
+		+rem(left, -80px)
+		z-index: 5
+.next-page-hover
+	display: block
+.next-page-hover:hover
+	display: block
+	h2
+		color: $maincolor
+.bg-gray
+	height: 100%
+	position: absolute
+	width: 100%
+	background-color: #f8f8f8
+	left: 0
+	z-index: 1;
+	+rem(max-height, 220px)
+	a 
+		width: 100%
+		height: 100%
+		display: block
+.bg-gray + .l
+	position: relative
+	z-index: 2
+
+.bg-gray:hover + .next-page-hover h2
+	color: $maincolor
+.full-link
+	background-color: #f8f8f8
+	display: block
+.list-link 
+	+rem(font-size, 30px)
+	+rem(margin-top, 3px)
+	li
+		text-align: center
+		a
+			color: #000
+			padding: 7px 0
+			font-family: $Medium
+			transition: color 0.3s ease-out;
+			display: block
+			&:hover
+				color: $maincolor
+.list-link_no-bold
+	+rem(margin-top, 14px)
+	li
+		a
+			font-family: $Book
+			+rem(font-size, 24px)
+			padding: 8px 0
+	li:first-child
+		a
+			font-family: $Medium
+			+rem(font-size, 30px)
+.list-link-secondary
+	+rem(margin-top, 63px)
+.contacts
+	+rem(font-size, 20px)
+	+rem(padding-top, 65px)
+	padding-left: 7px
+	max-width: 95%
+	.adress
+		+rem(font-size, 20px)
+		font-family: $Medium
+		position: relative
+		+rem(margin-bottom, 20px)
+		line-height: 1.7
+		+rem(padding-left, 48px)
+		svg
+			+rem(width, 24px)
+			+rem(height, 30px)
+			left: 0
+			position: absolute
+			top: 0
+			fill: $maincolor
+	.tel
+		+rem(font-size, 20px)
+		font-family: $Medium
+		position: relative
+		+rem(margin-bottom, 30px)
+		+rem(padding-left, 48px)
+		svg
+			+rem(width, 27px)
+			+rem(height, 27px)
+			left: 0
+			position: absolute
+			top: 0
+			fill: $maincolor
+	.dop_info
+		text-transform: uppercase
+		+rem(font-size, 15px)
+		+rem(padding-left, 48px)
+		span
+			padding-left: 10px
+			margin-left: 10px
+			border-left: 1px solid #000
+			svg
+				+rem(width, 14px)
+				+rem(height, 15px)
+				position: relative
+				top: 3px
+				fill: $black
+				transition: fill 0.3s ease;
+		a 
+			letter-spacing: 0.9px
+	a
+		color: #000
+		transition: color 0.3s ease;
+		&:hover 
+			color: $maincolor
+			svg 
+				fill: $maincolor
+.company-based
+	position: relative
+	+rem(margin-bottom, 50px)
+	.icon
+		display: block
+		+rem(width, 75px)
+		+rem(height, 121px)
+		margin: 0 auto
+		&.icon-based
+			background-image: url("../img/icons/icon-since.png")
+			background-size: cover
+			background-repeat: no-repeat
+.copyright
+	text-align: center
+	+rem(margin, 77px 0 23px)
+	span
+		+rem(font-size, 15px)
+		text-transform: uppercase
+		letter-spacing: 0.9px
+.developer
+	text-align: center
+	+rem(margin-bottom, 43px)
+	a
+		+rem(font-size, 15px)
+		text-transform: uppercase
+		padding: 5px 0
+		display: inline-block
+		letter-spacing: 0.9px
+.pages
+	height: 100%
+	&.transfer-pages
+		overflow: hidden
+	&.pages-out		
+		.section-scroll-container
+			animation: contentOut 0.6s ease forwards
+	&.pages-in
+		.section-scroll-container
+			// opacity: 0
+			// transform: translate(0, -10%)
+			animation: contentIn 0.6s ease forwards
+		&.animate-pages
+			.section-scroll-container
+				opacity: 1
+				transform: translate(0, 0)
+@keyframes contentOut
+	0% 
+		opacity: 1
+		transform: translate(0, 0)
+	100%
+		opacity: 0
+		transform: translate(0, 10%)
+@keyframes contentIn
+	0% 
+		opacity: 0
+		transform: translate(0, -10%)
+	100%
+		opacity: 1
+		transform: translate(0, 0)
+.breadcumbs
+	position: relative
+	+rem(margin-bottom, 52px)
+	.breadcumbs-inner
+	.breadcrumbs-content
+		position: relative
+	.breadcrumbs-item
+		display: inline-block
+		+rem(margin-right, 37px)
+		vertical-align: top
+		a 
+			display: inline-block
+			color: $black
+			span
+				font-family: $Book
+				+rem(font-size, 15px)
+				text-transform: uppercase
+				+rem(letter-spacing, 0.6px)
+.section-anchors
+	+rem(padding, 33px 0 0)
+.anchor-container
+	+rem(padding, 0 15px)
+	ul
+		+rem(margin, 0 -13px)
+	.achors-item
+		display: inline-block
+		+rem(margin-bottom, 11px)
+		.anchor-trigger
+			font-family: $Medium
+			+rem(font-size, 20px)
+			padding: 0 13px
+			display: inline-block
+			color: $maincolor
+			transition: color 0.3s ease
+			&:hover
+				color: $black
+.section
+	p
+		+rem(font-size, 20px)
+		line-height: 1.6
+		&.lead
+			font-family: $Medium
+.container-image
+	+clr
+	.image-element
+		+rm(600)
+			float: left
+			width: 40%
+			+rem(margin-right, 35px)
+		img
+			max-width: 100%
+	.text-elements
+		overflow: hidden
+		+r(599)
+			+rem(padding-top, 33px)
+		p
+			&:not(:last-child)
+				+rem(margin-bottom, 30px)
+			&.lead
+				font-family: $Medium
+				+rem(font-size, 20px)
+	.title-head
+		h2, .h2
+			max-width: 83%
+			+rem(margin-bottom, 38px)
+			line-height: 1
+.groups-container-elements
+	width: 100%
+	.groups-container_item
+		&:not(:last-child)
+			+rem(margin-bottom, 60px)
+	.groups-head
+		+rem(margin-bottom, 35px)
+		h2, .h2
+			margin-bottom: 0
+	.groups-body
+		font-size: 0
+		.elemets-container
+			width: 100%
+			display: inline-block
+			vertical-align: top
+			+rm(600)
+				width: 48%
+				+rem(padding-right, 35px)
+.elemets-container
+	width: 100%
+	.elements-field
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		.element-trigger
+			backface-visibility: hidden
+			border-bottom: 1px solid #d0d0d0
+			+rem(padding-left, 15px)
+			+rem(padding-right, 25px)
+			+rem(padding-top, 18px)
+			+rem(padding-bottom, 20px)
+			display: block
+			cursor: pointer
+			position: relative
+			&::after
+				content: ""
+				+rem(width, 15px)
+				+rem(height, 15px)
+				position: absolute
+				border-right: 2px solid $black
+				border-bottom: 2px solid $black
+				transform: rotate(-45deg) translate(0, -50%)
+				right: 8px
+				top: 50%
+				transition: border-color 0.3s ease
+				backface-visibility: hidden
+			.element-name
+				font-family: $Regular
+				+rem(font-size, 20px)
+				color: $dark
+				transition: color 0.3s ease
+				&:not(:only-child)
+					float: left
+					width: 50%
+			.element-content
+				padding-top: 3px
+				p
+					color: #cdcdcd
+			&:hover
+				&::after
+					border-color: $maincolor
+				.element-name
+					color: $maincolor
+.groups-modals, .news-modals, .form-modals
+	position: absolute
+	z-index: 999
+	width: 100%
+	left: 100%
+	height: 100%
+	top: 0
+	&::after
+		content: ""
+		width: 100%
+		background-color: $white
+		height: 100%
+		left: 100%
+		position: absolute
+		top: 0
+		transition: transform 0.3s linear
+		z-index: 0
+	&.show-modal
+		left: 0
+	.cross-head
+		+rem(right, 15px)
+	.groups-modal-scroll, .news-modal-scroll, .form-modal-scroll
+		height: 100%
+		z-index: 2
+	.groups-modal-content, .news-modal-content, .form-modal-content
+		width: 100%
+		height: 100%
+		background-color: $white
+		left: 100%
+		position: absolute
+		background-color: $white
+		transition: transform 0.3s linear
+		transform-style: flat
+		overflow: auto
+	.row-request
+		position: fixed
+		bottom: -1px
+		left: 100%
+		width: 100%
+		+rem(height, 170px)
+		border-top: 1px solid #bcbcbc
+		transition: transform 0.3s linear
+		z-index: 2
+	.content-container
+		min-height: 100vh
+		+rem(padding-bottom, 170px)
+		+rem(padding-top, 80px)
+		+rem(padding-left, 15px)
+		+rem(padding-right, 15px)
+		.content-scrolls
+			// min-height: 100vh
+	&.open
+		.row-request,
+		.groups-modal-content, .news-modal-content, .form-modal-content
+			transform: translate(-100%, 0)
+
+		&::after
+			// transform: translate(-100%, 0)
+	&.show-modal
+		.groups-modals
+			left: 0
+	.request-container
+		+clr
+		+rem(padding, 19px 15px)
+		background-color: $white
+		.btn
+			margin: 0 auto
+			display: block
+			max-width: 50%
+.groups-content, .news-content
+	.content-head
+		border-bottom: 3px solid $black
+		+rem(padding-bottom, 40px)
+		+rem(margin-bottom, 29px)
+		position: relative
+		.content-title 
+			font-family: $Medium
+			+rem(font-size, 42px)
+			overflow: hidden
+			// padding-right: 8%
+			line-height: 1.15
+		.content-date
+			font-family: $Book
+			font-size: 12px
+			letter-spacing: 0.8px
+			position: absolute
+			+rem(top, - 32px)
+	.content-body
+		.h3, h3
+			font-family: $Medium
+			+rem(font-size, 20px)
+			line-height: 1.6
+	.content-goods
+		+rem(margin, 0 -15px 43px)
+		+clr
+		&.columns
+			.goods-title
+				width: 100%
+				float: left
+			.goods-desrciption
+				width: 100%
+				float: left
+		.goods-title, .goods-desrciption
+			+rem(padding, 0 15px)
+		.goods-title			
+			+rem(margin-bottom, 20px)
+	.elemets-container
+		border-top: 1px solid #d0d0d0
+	.table
+		display: table
+		width: 100%
+		// table-layout: fixed
+		.table-head
+			display: table-header-group
+			.table-head-row
+				display: table-row
+				.table-head-item
+					display: table-cell
+					+rem(padding, 7px 0 17px)
+					border-bottom: 1px solid #c9c9c9
+					&:nth-child(2)
+						+rem(width, 111px)
+					&:last-child
+						+rem(width, 65px)
+					span 
+						font-family: $Regular
+						+rem(font-size, 16px)
+						color: #cdcdcd
+		.table-body
+			display: table-row-group
+			.table-body-row
+				display: table-row
+				.table-body-item
+					display: table-cell
+					+rem(padding, 9px 0 14px)
+					border-bottom: 1px solid #c9c9c9
+					// width: 30%
+					span
+						line-height: 1.4
+						color: $black
+					&:first-child
+						// +rem(width, 150px)
+						// width: 40%
+						+rem(padding-right, 15px)
+						span
+							color: #858585
+					&:nth-child(2)
+						+rem(width, 111px)
+					&:last-child
+						+rem(width, 65px)
+	.navigation
+		float: right
+		+rem(padding-top, 8px)
+		.navigation-link
+			+rem(width, 18px)
+			+rem(height, 33px)
+			display: inline-block
+			vertical-align: top
+			.icon
+				width: 100%
+				height: 100%
+				svg
+					width: 100%
+					height: 100%
+					stroke: $black
+					transition: stroke 0.3s ease
+			&:hover
+				.icon
+					svg
+						stroke: $maincolor
+			&.navigation-prev
+				+rem(margin-right, 16px)
+			&.navigation-next
+				+rem(margin-left, 16px)
+			&.inactive
+				pointer-events: none
+				.icon
+					svg
+						stroke: rgba(0,0,0,.5)
+.btn
+	background: linear-gradient(270deg, #ac252a, #560b0e);
+	background-size: 400% 400%
+	+rem(padding, 21px 10px)
+	+rem(min-width, 201px)
+	text-align: center
+	border-radius: 3px
+	animation: AnimationGradient 2s ease-out infinite
+	position: relative
+	overflow: hidden
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		background-color: transparent
+		width: 100%
+		height: 100%
+		transition: background-color 0.3s ease
+		z-index: 0
+	&:hover
+		&:after
+			background-color: $darkmain
+		animation-play-state: paused
+		.icon
+			transform: translate(5px, 0)
+	span 
+		font-family: $Book
+		color: $white
+		text-transform: uppercase
+		+rem(font-size, 12px)
+		display: inline-block
+		vertical-align: middle
+		+rem(margin-right, 10px)
+		+rem(letter-spacing, 1.2px)
+		position: relative
+		z-index: 1
+	.icon
+		display: inline-block
+		vertical-align: middle
+		transition: transform 0.3s ease
+		position: relative
+		z-index: 1
+		&.icon-arrow
+			+rem(width, 16px)
+			+rem(height, 12px)
+			position: relative
+			svg
+				width: 100%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+.request-access
+	display: inline-block
+	+rem(padding, 21px 14px)
+	.icon
+		display: inline-block
+		vertical-align: middle
+		+rem(width, 22px)
+		+rem(height, 19px)
+		+rem(margin-right, 9px)
+		svg
+			fill: $maincolor
+			transition: fill 0.3s ease
+	span
+		font-family: $Regular
+		display: inline-block
+		vertical-align: middle
+		+rem(letter-spacing, 0px)
+		border-bottom: 1px solid
+		padding-top: 2px
+		padding-bottom: 5px
+		transition: color 0.3s ease, border-color 0.3s ease
+		color: $maincolor
+	&:hover
+		.icon
+			svg
+				fill: $black
+		span
+			color: $black
+			border-color: transparent
+.container-show_more
+	.show_more-head
+	.show_more-body
+		display: none
+	.show_more-trigger
+		text-align: center
+		position: relative
+		cursor: pointer
+		z-index: 2
+		backface-visibility: hidden
+		&::after
+			content: ""
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%)
+			position: absolute
+			+rem(height, 40px)
+			width: 100%
+			left: 0
+			bottom: 100%
+		&.open
+			+rem(margin-top, 10px)
+			&::after
+				display: none
+		span
+			color: $maincolor
+			border-bottom: 1px dotted
+			// // +rem(padding, 0 0 5px 0)
+			// display: inline-block
+			// position: relative
+			// top: -4px
+			// margin-left: -6px
+.maps-wrapper
+	+clr
+	position: relative
+	+rem(padding-bottom, 11px)
+	+rem(margin-bottom, 50px)
+	.map-wrapp
+		position: absolute
+		width: 100%
+		height: 100%
+		img	
+			max-width: 100%
+			overflow: hidden
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin auto
+		.img
+			position: absolute
+			width: 100%
+			height: 100%
+			background-size: cover
+			background-position: 63%
+			background-repeat: no-repeat
+			+rm(600)
+				background-position: 17%
+.section
+	&.contact-info
+		+rem(padding-top, 18px)
+		position: relative
+		.email
+			+rem(margin-bottom, 66px)
+.contact-info
+	.link-map
+		text-transform: uppercase
+		+rem(font-size, 15px)
+		border-bottom: 1px solid $maincolor
+		padding: 5px 0
+		color: $maincolor
+		transition: all 0.3s ease-out
+		display: inline-block
+		+rem(margin-bottom, 30px)
+		&:hover
+			color: #000
+			border-color: transparent
+	.btn
+		display: block
+	.tel
+		+rem(margin-bottom, 21px)
+	.adres
+		+rem(margin-bottom, 29px)
+		+rem(font-size, 24px)
+	.email
+		+rem(margin-bottom, 70px)
+		+rem(font-size, 15px)
+		text-transform: uppercase
+		span
+			padding: 0 17px
+		svg
+			width: .875rem;
+			height: .9375rem;
+			position: relative;
+			top: 3px;
+	.bottom
+		vertical-align: bottom
+		+rem(padding-left, 75px)
+	.contact-data
+		+rem(padding-left, 58px)
+		+rem(padding-top, 5px)
+.departament
+	.column-100
+		position: relative
+		+rem(padding-left, 60px)
+		+rem(margin-bottom, 35px)
+		+rm(767)
+			width: 50%
+			display: inline-block
+	.title
+		+rem(font-size, 15px)
+		text-transform: uppercase
+		position: relative
+		letter-spacing: 0.6px
+		+rem(margin-bottom, 10px)
+		&:before
+			content: ''
+			background-color: $maincolor
+			height: 2px
+			+rem(width, 35px)
+			position: absolute
+			top: 0
+			+rem(left, -60px)
+			bottom: 0
+			margin: auto
+	.tel
+		+rem(font-size, 20px)
+		+rem(margin-bottom, 5px)
+	.email
+		+rem(font-size, 20px)
+.quote
+	// +rem(padding-left, 200px)
+	padding-left: 26%
+	// +rem(padding-right, 40px)
+	// +rem(margin-bottom, 118px)
+	+rem(font-size, 24px)
+	position: relative
+	line-height: 1.25
+	&:before 
+		content: ''
+		width: 20%
+		height: 2px
+		background-color: $maincolor
+		position: absolute
+		+rem(top, 15px)
+		+rem(left, 0px)
+.wrapp-column
+	[class^=column-]
+		+rm(767)
+			width: 50%
+			display: inline-block
+	.icon-svg-wrapp
+		+rem(width, 140px)
+		img
+			max-width: 100%
+.img-map, .img-world
+	max-width: 100%
+	+rem(margin-bottom, 25px)
+	+rm(767)
+		float: left
+		max-width: 45%
+		margin-right: 5%
+		+rem(margin-bottom, 15px)
+.card-top-line
+	+rem(margin-bottom, 46px)
+	.title
+		font-family: $Medium
+		+rem(padding-bottom, 10px)
+		+rem(padding-top, 15px)
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 40px
+			height: 2px
+			background-color: $maincolor
+	.desc
+		+rem(padding-right, 50px)
+.container
+	&.export
+		.h3, h3
+			margin-bottom: 0
+		p
+			&:not(:last-child)
+				+rem(margin-bottom, 25px)
+		[class^=column-]
+			+clr
+			&:not(:last-child)
+				+rem(margin-bottom, 45px)
+			&.card-top-line
+				+rm(767)
+					width: 50%
+					display: inline-block
+.container
+	h3, .h3
+		+rem(margin-bottom, 45px)
+.news-pagination-years
+	+rem(margin-bottom, 45px)
+	+rem(padding, 0 4px)
+	ul
+		+rem(margin, 0 -13px)
+	.pagination-years_item
+		display: inline-block
+		.pagination-years-trigger
+			font-family: $Medium
+			+rem(font-size, 20px)
+			padding: 0 13px
+			display: inline-block
+			transition: color 0.3s ease 0s
+			color: $maincolor
+			span
+				border-bottom: 2px dotted
+				transition: border-color 0.3s ease 0s
+			&.active
+				color: $black
+				span
+					border-color: transparent
+			&:hover
+				color: $black
+				span
+					border-color: transparent
+.news-list
+	font-size: 0
+	.news-item
+		padding: 0
+		width: 100%
+		+rem(margin-bottom, 65px)
+		position: relative
+		+rm(480)
+			width: 50%
+			+rem(padding, 0 15px)
+.news-page-pagination
+	border-top: 3px solid $black
+	position: relative
+	+rem(padding-top, 27px)
+	+rem(padding-bottom, 28px)
+	.page-pagination_links
+		width: 100%
+		text-align: center
+		.pagination_links-item
+			display: inline-block
+			+rem(padding, 5px 12px)
+			span
+				font-family: $Medium
+				+rem(font-size, 20px)
+				color: $black
+				transition: color 0.3s ease
+			&.active, &:hover
+				span
+					color: $maincolor
+
+	.page-pagination_button
+		position: absolute
+		+rem(width, 18px)
+		+rem(top, 27px)
+		svg
+			stroke: rgba(0, 0, 0, .5)
+		&.pagination_button-prev
+			left: 0
+		&.pagination_button-next
+			right: 0
+	a
+		&.page-pagination_button
+			svg
+				stroke: $black
+				transition: stroke 0.3s ease
+			&:hover
+				svg
+					stroke: $maincolor
+.news-modals .content-container
+	// +rem(padding-right, 80px)
+	+rem(padding-bottom, 70px)
+	// padding-right: 10%
+.news-content
+	.content-head
+		+rem(padding-bottom, 51px)
+		+rem(margin-bottom, 48px)
+	.container-image
+		+clr
+		+rem(margin-bottom, 30px)
+		.image-element
+			padding-top: 9px
+			+rem(margin-bottom, 12px)
+			img
+				max-width: 100%
+			+rm(480)
+				width: 45.5%
+				+rem(margin-right, 52px)
+				float: left
+		.text-elements
+			padding-top: 0
+			line-height: 1.6
+			overflow: visible
+	.content-body
+		p
+			+rem(font-size, 20px)
+			line-height: 1.6
+			&:not(:last-child)
+				+rem(margin-bottom, 30px)
+.tab-navigation
+	.anchor-container
+		.achors-item
+			.anchor-trigger
+				span
+					border-bottom: 1px dotted
+					+rem(padding-bottom, 5px)
+			&.active
+				.anchor-trigger
+					span
+						color: $black
+						border-color: transparent
+.documents-container
+	+rem(margin-top, 80px)
+	.documents-item
+		&:not(:last-child)
+			+rem(margin-bottom, 87px)
+		.documents-head
+			+rm(767)
+				width: 39%
+				float: left
+		.documents-body
+			overflow: hidden
+	.doc-list_container
+		+rem(padding-top, 10px)
+		display: flex
+		align-items: center
+		justify-content: stretch
+		flex-wrap: wrap
+	.doc-element
+		display: inline-block
+		width: 50%
+		+rm(767)
+			width: 50%
+			padding-right: 10%
+		+rem(margin-bottom, 48px)
+		a
+			display: flex
+			align-items: center
+			justify-content: stretch
+			&:hover
+				.icon
+					svg
+						fill: $maincolor
+				span
+					color: $maincolor
+		.icon
+			+rem(width, 33px)
+			+rem(height, 40px)
+			svg
+				fill: $black
+				transition: fill 0.3s ease
+		span
+			+rem(padding-left, 15px)
+			font-family: $Medium
+			+rem(font-size, 16px)
+			color: $black
+			transition: color 0.3s ease
+.personal_information
+	+rem(padding-top, 43px)
+	padding-right: 8%
+.tab-body
+	transition: opacity 0.3s ease
+	&.hide
+		opacity: 0
+.field-row
+	width: 100%
+	font-size: 0
+	.field-item
+		position: relative
+		+rem(margin-bottom, 40px)
+		&:only-child
+			display: block
+			width: 100%
+			padding: 0
+		display: inline-block
+		+rm(767)
+			width: 50%
+			&:first-child
+				+rem(padding-right, 9px)
+			&:last-child
+				+rem(padding-left, 9px)		
+	input, textarea
+		+rem(height, 59px)
+		border-bottom: 1px solid #a2a2a2
+		width: 100%
+		background-color: #fafafa
+		font-family: $Regular
+		+rem(font-size, 20px)
+		color: #1c1c1c
+		+rem(padding, 0 20px)
+		transition: background-color 0.3s ease, border-color 0.3s ease
+		&.error
+			background-color: #fef3f3
+			border-color: $maincolor
+		&.password
+			+rem(padding-right, 145px)
+		&:focus, &.not-empty
+			& + label
+				transform: translate(0, -45px)
+	textarea
+		height: auto
+		+rem(max-height, 160px)
+		+rem(min-height, 59px)
+		overflow-x: hidden
+		resize: none
+		outline: none
+		border: none
+		border-bottom: 1px solid #a2a2a2
+		+rem(padding, 15px 20px)
+		line-height: 1.3
+		+scrollbar
+			width: 5px
+		+scrollbar-track
+			width: 5px
+			background-color: hsla(0,0%,87%,.75)
+		+scrollbar-thumb
+			background-color: $maincolor
+			border-radius: 3px
+			width: 3px
+	.help-block
+		position: absolute
+		top: 100%
+		left: 0
+		font-family: $Book
+		+rem(font-size, 14px)
+		+rem(margin-top, 5px)
+		color: $maincolor
+	label
+		font-family: $Book
+		+rem(font-size, 12px)
+		color: #aaaaaa
+		text-transform: uppercase
+		position: absolute
+		+rem(left, 23px)
+		+rem(top, 25px)
+		letter-spacing: 0.3px
+		transition: transform 0.3s ease
+	.forgort-pass
+		font-family: $Regular
+		+rem(font-size, 14px)
+		color: #777777
+		position: absolute
+		+rem(right, 23px)
+		+rem(top, 21px)
+	.btn
+		+rem(margin-top, 23px)
+		+rem(min-width, 170px)
+		background: none
+		background-color: $maincolor
+		animation: none
+		transition: background-color 0.3s ease
+		&:hover
+			background-color: $maindark
+		&::after
+			content: none
+	.register
+		float: right
+		+rem(margin-top, 23px)
+		+rem(padding, 18px 4px)
+		span
+			display: inline-block
+			vertical-align: middle
+			font-family: $Regular
+			+rem(font-size, 16px)
+			color: $maincolor
+			border-bottom: 1px solid
+			padding-bottom: 3px
+			transition: border-color 0.3s ease, color 0.3s ease
+		&:hover
+			span
+				color: $black
+				border-color: transparent
+@keyframes out_form
+	0%
+		opacity: 1
+		transform: translate(0, 0)
+	100%
+		opacity: 0
+		transform: translate(10%, 0)
+@keyframes in_form
+	0%
+		opacity: 0
+		transform: translate(10%, 0)
+	100%
+		opacity: 1
+		transform: translate(0, 0)

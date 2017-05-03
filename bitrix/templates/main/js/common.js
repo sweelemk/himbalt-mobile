@@ -8,22 +8,49 @@ function extend( a, b ) {
 	return a;
 }
 
-var modalsProject;
+var modalsProject, menu;
 
-function menu(){
-	var trigger = $(".ui-menu"),
-		overlay = $(".overlay"),
-		body = $("body"),
-		close = $(".cross-menu");
 
-	trigger.on("click", function(){
-		if(body.hasClass("navigation_show")) return;
-		body.addClass("navigation_show");
-	});
-	overlay.add(close).on("click", function(){
-		body.removeClass("navigation_show");
-	});
-};
+
+
+function Menu() {
+	var _this = this;
+
+	_this.initHandler = function(){
+		_this.trigger.on("click", function(){
+			if(_this.body.hasClass("navigation_show")) return;
+			_this.body.addClass("navigation_show");
+		});
+		_this.overlay.add(_this.close).on("click", function(){
+			_this.body.removeClass("navigation_show");
+		});
+	}
+
+	_this.init = function(){
+		_this.trigger = $(".ui-menu");
+		_this.overlay = $(".overlay");
+		_this.body = $("body");
+		_this.close = $(".cross-menu");
+
+		_this.initHandler();
+	}
+
+	_this.init();
+}
+// var menu = function(){
+// 	var trigger = $(".ui-menu"),
+// 		overlay = $(".overlay"),
+// 		body = $("body"),
+// 		close = $(".cross-menu");
+
+// 	trigger.on("click", function(){
+// 		if(body.hasClass("navigation_show")) return;
+// 		body.addClass("navigation_show");
+// 	});
+// 	overlay.add(close).on("click", function(){
+// 		body.removeClass("navigation_show");
+// 	});
+// };
 
 function Loading(){
 	var _this = this;
@@ -83,7 +110,8 @@ function Loading(){
 				};
 
 				$(_this.options.pages).addClass("transfer-pages pages-out");
-
+				modalsProject.removeEventHandler();
+				$(".root_frame").off("scroll");
 			},
 			success: function(content){
 				if(to_popstate !== false) {
@@ -121,9 +149,11 @@ function Loading(){
 							// menu()
 							_this.checkTransition();
 							// $(".js-slider-one-slide").slick("setPosition");
+							menu = new Menu();
 						}, 500);
 						// scrolls.scrollUpdate(true);
-						modalsProject.updateModal();
+						modalsProject.updateModal();						
+						
 					});
 				},600);
 			}
@@ -175,126 +205,6 @@ function actionContent() {
 			$(this).addClass("inactive").removeClass("open-side");
 		}
 	});
-};
-
-function Scroller(el, bool){
-
-	this.el = el;
-	this.bool = bool;
-	this.timer;
-
-	this.param = {
-		constant: ".js-constant",
-		aninElements: ".js-section",
-		window: "window",
-		logo: ".logo-container"
-	}
-
-	this.Scrollbar = window.Scrollbar;
-
-	this.init();
-};
-
-Scroller.prototype = {
-	init: function(){
-		var self = this;
-
-		this.fixedElement = document.querySelector(this.param.constant);
-		this.fixedElementLogo = document.querySelector(this.param.logo);
-		this.windowHeight = this.windowValue();
-		this.content = document.querySelector(".container-content");
-
-		this.scrollbar = this.Scrollbar.init(this.el, {
-			speed: 1.5,
-			damping: 0.08,
-			alwaysShowTracks: true,
-			thumbMinSize: 8,
-			renderByPixels: true,
-			syncCallbacks: true
-		});
-
-		this.scrollbar.addListener(function(status){
-			if(!self.bool) {
-				return;
-			}
-			self.fixedPositionSidebar(status);
-			self.updateOnScroll();
-			if($(".section_map").length){
-				self.mapDetected();
-			}
-		});
-
-		this.updateElements();
-
-		window.onresize = function(){
-			self.windowHeight = self.windowValue();
-			clearTimeout(self.timer);
-			self.timer = setTimeout(function () {
-				self.scrollUpdate();
-			},300);
-		}
-	},
-	mapDetected: function(){
-		this.mapPosTop = document.querySelector(".section_map").getBoundingClientRect().top;
-		this.mapPosBottom = document.querySelector(".section_map").getBoundingClientRect().bottom;
-		this.height = this.windowValue() / 2;
-
-		console.log(this.height)
-
-		if(this.mapPosTop < this.height  && this.mapPosBottom > this.height) {
-			this.content.classList.add("bg-color");
-		} else if(this.mapPosTop < this.height && this.mapPosBottom < this.height) {
-			this.content.classList.remove("bg-color");
-		} else if(this.mapPosTop > this.height && this.mapPosBottom > this.height) {
-			this.content.classList.remove("bg-color");
-		}
-	},
-	windowValue: function(){
-		return window.innerHeight;
-	},
-	fixedPositionSidebar: function(state){
-		var t_pos = state.offset.y;
-		this.fixedElement.style.top = t_pos + "px";
-		this.fixedElementLogo.style.top = t_pos + "px";
-	},
-	scrollSet: function(){
-		this.scrollbar.setPosition(0,0);
-	},
-	scrollToPosition: function(pos){
-		this.scrollbar.scrollTo(0, pos, 800);
-	},
-	scrollPosition: function(){
-		return this.scrollbar.scrollTop;
-	},
-	scrollUpdate: function(param){
-		var self = this;
-
-		this.scrollbar.update(true);
-		
-		if(param) {
-			self.updateElements();
-		}
-	},
-	updateElements: function(){
-		var scroll_el = [];
-
-		this.section_el = document.querySelectorAll(this.param.aninElements);
-
-	},
-	updateOnScroll: function(){
-		var self = this;
-
-		this.section_el.forEach(function(node, i){
-			var getElementTop = node.getBoundingClientRect().top;
-			if(getElementTop <= self.windowHeight) {
-				self.setScrollClass(node);
-			}
-		});
-	},
-	setScrollClass: function(element){
-		var getAttr = element.getAttribute("data-inview-class");
-		element.classList.add(getAttr);
-	},
 };
 
 function initSlickSlider() {
@@ -386,27 +296,47 @@ Modals.prototype = {
 	},
 	eventHandler: function() {
 		var self = this;
-		this.elements.forEach(function(element){
-			element.addEventListener("click", function(event){
-				var value = this.getAttribute("data-modal");
-				if(value == "modal") {
-					var options = this.getAttribute("data-option");
-					if($(".modal-items").hasClass("open")) {
-						self.changeForm(options);
-					} else {
-						if(this.getAttribute("data-inner")) {
-							self.changeFormType(options);
-						} else {
-							self.openModal(value, options);
-						}						
-					}					
+		// this.elements.forEach(function(element){
+		// 	element.addEventListener("click", function(event){
+		// 		var value = this.getAttribute("data-modal");
+		// 		if(value == "modal") {
+		// 			var options = this.getAttribute("data-option");
+		// 			if($(".modal-items").hasClass("open")) {
+		// 				self.changeForm(options);
+		// 			} else {
+		// 				if(this.getAttribute("data-inner")) {
+		// 					self.changeFormType(options);
+		// 				} else {
+		// 					self.openModal(value, options);
+		// 				}						
+		// 			}					
+		// 		} else {
+		// 			self.openModal(value);	
+		// 		}				
+		// 		event.preventDefault();
+		// 	});	
+		// });
+		$(this.elements).on("click", function(event){
+			var value = this.getAttribute("data-modal");
+			if(value == "modal") {
+				var options = this.getAttribute("data-option");
+				if($(".modal-items").hasClass("open")) {
+					self.changeForm(options);
 				} else {
-					self.openModal(value);	
-				}				
-				event.preventDefault();
-			});	
+					if(this.getAttribute("data-inner")) {
+						self.changeFormType(options);
+					} else {
+						self.openModal(value, options);
+					}
+				}
+			} else {
+				self.openModal(value);	
+			}				
+			event.preventDefault();
 		});
-				
+	},
+	removeEventHandler: function(){
+		$(this.elements).off("click");
 	},
 	generateEventOnCloseModals: function(){
 		var self = this;
@@ -645,7 +575,28 @@ function country(){
 		map.children().removeClass("open");
 	})
 };
+function getBgForCountry(){
+	var mapPosBottom, mapPosTop;
+	var content = document.querySelector(".container-content");
+	var height = $(window).height() / 2;
+	mapDetectedfunction();
+	$(".root_frame").on("scroll", function(){
+		mapDetectedfunction();
+	});
 
+
+	function mapDetectedfunction(){
+		mapPosBottom = document.querySelector(".section_map").getBoundingClientRect().bottom;
+		mapPosTop = document.querySelector(".section_map").getBoundingClientRect().top;
+		if(mapPosTop < height  && mapPosBottom > height) {
+			content.classList.add("bg-color");
+		} else if(mapPosTop < height && mapPosBottom < height) {
+			content.classList.remove("bg-color");
+		} else if(mapPosTop > height && mapPosBottom > height) {
+			content.classList.remove("bg-color");
+		}
+	};
+};
 function changeInput(input) {
 	input.each(function(){
 		var _ = $(this);
@@ -661,7 +612,7 @@ function changeInput(input) {
 }
 $(document).ready(function(){
 	// init menu
-	menu();
+	menu = new Menu();
 	actionContent();
 	modalsProject = new Modals("[data-modal]");
 });

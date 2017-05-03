@@ -1612,13 +1612,13 @@ body {
   font-size: 1.25rem; }
 
 .quote {
-  padding-left: 26%;
-  font-size: 1.5rem;
+  padding-left: 24.5%;
+  font-size: 1.875rem;
   position: relative;
-  line-height: 1.25; }
+  line-height: 1.4; }
   .quote:before {
     content: '';
-    width: 20%;
+    width: 16%;
     height: 2px;
     background-color: #ac252a;
     position: absolute;
@@ -1626,12 +1626,27 @@ body {
     left: 0; }
 
 .wrapp-column .icon-svg-wrapp {
-  width: 8.75rem; }
+  width: 8.75rem;
+  margin-bottom: 0.9375rem; }
   .wrapp-column .icon-svg-wrapp img {
     max-width: 100%; }
 
+.wrapp-column.wrap-columns-center {
+  text-align: center; }
+  .wrapp-column.wrap-columns-center > div {
+    margin-bottom: 1.875rem; }
+  .wrapp-column.wrap-columns-center .icon-text-wrapp {
+    max-width: 80%;
+    margin: 0 auto; }
+  .wrapp-column.wrap-columns-center .icon-svg-wrapp {
+    margin: 0 auto;
+    margin-bottom: 0.9375rem; }
+    .wrapp-column.wrap-columns-center .icon-svg-wrapp img, .wrapp-column.wrap-columns-center .icon-svg-wrapp svg {
+      margin: 0 auto; }
+
 .img-map, .img-world {
-  max-width: 100%;
+  max-width: 60%;
+  margin: 0 auto;
   margin-bottom: 1.5625rem; }
 
 .card-top-line {
@@ -1840,8 +1855,7 @@ body {
       transition: color 0.3s ease; }
 
 .personal_information {
-  padding-top: 2.6875rem;
-  padding-right: 8%; }
+  padding-top: 2.6875rem; }
 
 .tab-body {
   -webkit-transition: opacity 0.3s ease;
@@ -1855,7 +1869,8 @@ body {
   .field-row .field-item {
     position: relative;
     margin-bottom: 2.5rem;
-    display: inline-block; }
+    display: inline-block;
+    width: 100%; }
     .field-row .field-item:only-child {
       display: block;
       width: 100%;
@@ -1999,21 +2014,258 @@ body {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0); } }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+.scheme-oil_sales {
+  position: relative;
+  margin-bottom: 5rem; }
+  .scheme-oil_sales::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, #FFFFFF)), -webkit-gradient(linear, left top, right top, from(#eeeeee), to(#eeeeee));
+    background: -webkit-linear-gradient(left, transparent 50%, #FFFFFF 50%), -webkit-linear-gradient(left, #eeeeee, #eeeeee);
+    background: linear-gradient(to right, transparent 50%, #FFFFFF 50%), linear-gradient(to right, #eeeeee, #eeeeee);
+    background-size: 16px 2px, 100% 2px; }
+  .scheme-oil_sales .scheme-oil_sales-container {
+    padding-bottom: 110%;
+    position: relative;
+    margin-top: 4.5rem; }
+  .scheme-oil_sales .scheme_text-container {
+    position: absolute;
+    max-width: 15rem;
+    top: -5.1875rem;
+    left: -0.1875rem; }
+    .scheme-oil_sales .scheme_text-container .text-title {
+      font-family: "FiraSansMedium";
+      font-size: 3.75rem;
+      color: #ac252a;
+      position: relative;
+      margin-bottom: 0.3125rem; }
+      .scheme-oil_sales .scheme_text-container .text-title::after {
+        content: "+";
+        position: absolute;
+        top: -2.5rem;
+        left: 0; }
+    .scheme-oil_sales .scheme_text-container .text-content p {
+      font-size: 1.5rem;
+      line-height: 1.25; }
+  .scheme-oil_sales .scheme_item-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .scheme-oil_sales .scheme_item-container .scheme_item {
+      width: 29%;
+      position: relative; }
+      .scheme-oil_sales .scheme_item-container .scheme_item:first-child {
+        width: 19%; }
+      .scheme-oil_sales .scheme_item-container .scheme_item:nth-child(2) .scheme_info {
+        left: 75%; }
+      .scheme-oil_sales .scheme_item-container .scheme_item:nth-child(3) .scheme_info {
+        left: 70%; }
+      .scheme-oil_sales .scheme_item-container .scheme_item .line {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        -webkit-transition: height 0.3s ease;
+        transition: height 0.3s ease; }
+        .scheme-oil_sales .scheme_item-container .scheme_item .line::after {
+          content: "";
+          width: 0.4375rem;
+          height: 0.4375rem;
+          border-radius: 100%;
+          border: 1px solid #ac252a;
+          position: absolute;
+          top: 0;
+          right: -0.1875rem;
+          z-index: 2;
+          background-color: #fff; }
+        .scheme-oil_sales .scheme_item-container .scheme_item .line::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          border-right: 1px solid #ac252a;
+          height: 100%; }
+      .scheme-oil_sales .scheme_item-container .scheme_item:first-child .line {
+        height: 35%; }
+      .scheme-oil_sales .scheme_item-container .scheme_item:nth-child(2) .line {
+        height: 68%; }
+    .scheme-oil_sales .scheme_item-container .scheme_info {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 60%;
+      display: block;
+      width: 5.3125rem; }
+      .scheme-oil_sales .scheme_item-container .scheme_info p {
+        font-size: 1rem; }
+      .scheme-oil_sales .scheme_item-container .scheme_info .year {
+        color: #cdcdcd;
+        font-size: 1rem; }
+
+.company-mission {
+  padding-left: 0.3125rem;
+  padding-bottom: 4.6875rem;
+  position: relative; }
+  .company-mission .freedom {
+    position: absolute;
+    width: 19.6875rem;
+    height: 19.6875rem;
+    top: -4.0625rem;
+    left: -3.8125rem; }
+  .company-mission h2, .company-mission .h2 {
+    margin-bottom: 1rem; }
+
+.section_map {
+  padding: 1.75rem 0;
+  min-height: 52.5rem;
+  position: relative; }
+  .section_map .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    z-index: 1; }
+  .section_map .map-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 0.9375rem; }
+  .section_map .map-title h2, .section_map .map-title .h2 {
+    margin-bottom: 2.1875rem; }
+  .section_map .text-container .text-title {
+    font-family: "FiraSansMedium";
+    font-size: 3.75rem;
+    color: #ac252a;
+    position: relative; }
+  .section_map .text-container .text-content {
+    max-width: 16.875rem; }
+    .section_map .text-container .text-content p {
+      font-size: 1.5rem;
+      line-height: 1.25; }
+  .section_map .country-list {
+    margin: 3rem -0.9375rem 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .section_map .country-list:hover .country li {
+      color: #8f8e8e; }
+    .section_map .country-list .country {
+      width: 50%;
+      padding: 0 0.9375rem; }
+      .section_map .country-list .country li {
+        line-height: 1.6;
+        cursor: pointer;
+        -webkit-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+        font-size: 1.25rem; }
+        .section_map .country-list .country li:hover {
+          color: #000; }
+  .section_map .country_item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.3125rem;
+    height: 0.3125rem;
+    border-radius: 100%;
+    background-color: #ac252a;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+    .section_map .country_item.open {
+      opacity: 1; }
+
+.title .text-container .text-title {
+  font-family: "FiraSansMedium";
+  font-size: 3.75rem;
+  color: #ac252a;
+  position: relative; }
+
+.title .text-container .text-content {
+  max-width: 15.625rem; }
+  .title .text-container .text-content p {
+    font-size: 1.5rem;
+    line-height: 1.25; }
+
+.container-content {
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; }
+  .container-content.bg-color {
+    background-color: #f4f4f4; }
+
+.partners {
+  padding-top: 7.8125rem; }
+  .partners .title .text-content {
+    margin-top: -0.3125rem;
+    max-width: 21.875rem; }
+    .partners .title .text-content p {
+      font-family: "FiraSansMedium";
+      font-size: 2.625rem; }
+  .partners .partners_list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -0.9375rem;
+    padding-top: 3.5625rem; }
+    .partners .partners_list .partners_item {
+      width: 50%;
+      padding: 0 2.1875rem;
+      margin-bottom: 3.4375rem; }
+      .partners .partners_list .partners_item img {
+        max-width: 100%;
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+        -webkit-transition: -webkit-filter 0.3s ease;
+        transition: -webkit-filter 0.3s ease;
+        transition: filter 0.3s ease;
+        transition: filter 0.3s ease, -webkit-filter 0.3s ease; }
+        .partners .partners_list .partners_item img:hover {
+          -webkit-filter: grayscale(0);
+          filter: grayscale(0); }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-
-@media only screen and (min-width: 767px) {
+        @media only screen and (min-width: 767px) {
 
   html {
     font-size: 22px; }
 
   .departament .column-100 {
-    width: 50%;
-    display: inline-block; }
-
-  .wrapp-column [class^=column-] {
     width: 50%;
     display: inline-block; }
 
@@ -2042,9 +2294,11 @@ body {
     padding-right: 0.5625rem; }
 
   .field-row .field-item:last-child {
-    padding-left: 0.5625rem; } }
+    padding-left: 0.5625rem; }
 
-@media only screen and (min-width: 600px) {
+  .partners .partners_list .partners_item {
+    width: 33.33%; } }
+        @media only screen and (min-width: 600px) {
 
   .container-image .image-element {
     float: left;
@@ -2057,13 +2311,17 @@ body {
 
   .maps-wrapper .map-wrapp .img {
     background-position: 17%; } }
-
-@media only screen and (max-width: 599px) {
+        @media only screen and (max-width: 599px) {
 
   .container-image .text-elements {
     padding-top: 2.0625rem; } }
+        @media only screen and (min-width: 480px) {
 
-@media only screen and (min-width: 480px) {
+  .wrapp-column [class^=column-] {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -0.25rem; }
 
   .news-list .news-item {
     width: 50%;
@@ -2072,9 +2330,15 @@ body {
   .news-content .container-image .image-element {
     width: 45.5%;
     margin-right: 3.25rem;
-    float: left; } }
+    float: left; }
 
-@media only screen and (max-width: 374px) {
+  .scheme-oil_sales .scheme-oil_sales-container {
+    padding-bottom: 70%; }
+
+  .scheme-oil_sales .scheme_text-container {
+    left: 3.125rem;
+    top: -1.25rem; } }
+        @media only screen and (max-width: 374px) {
 
   html {
     font-size: 12px; } }

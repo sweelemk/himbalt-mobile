@@ -110,7 +110,7 @@ function Loading(){
 				};
 
 				$(_this.options.pages).addClass("transfer-pages pages-out");
-				modalsProject.removeEventHandler();
+				
 				$(".root_frame").off("scroll");
 			},
 			success: function(content){
@@ -317,6 +317,9 @@ Modals.prototype = {
 		// 	});	
 		// });
 		$(this.elements).on("click", function(event){
+			if(documnet.getElementsByTagName("body").classList.contains("navigation_show")){
+				documnet.getElementsByTagName("body").classList.remove("navigation_show");
+			}
 			var value = this.getAttribute("data-modal");
 			if(value == "modal") {
 				var options = this.getAttribute("data-option");
@@ -428,6 +431,7 @@ Modals.prototype = {
 		$('textarea.js-auto-size').textareaAutoSize();
 	},
 	updateModal: function(){
+		this.removeEventHandler();
 		this.init();
 	},
 	changeForm: function(next_modal){

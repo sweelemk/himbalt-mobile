@@ -12,8 +12,10 @@ html
 	font-size: 16px
 	+r(374)
 		font-size: 12px
-	+rm(767)
-		font-size: 22px
+	+rm_rm(767, 991)
+		font-size: 25px
+	+rm(992)
+		font-size: 29px
 body
 	overflow: hidden
 	font-family: $Book
@@ -524,9 +526,12 @@ body
 		display: none !important
 .btn-slider
 	padding-left: 3px
+	+rem(width, 115px)
+	float: right
 	+clr
 	.btn-wrapp
-		width: 45px
+		+rem(width, 45px)
+		+rem(height, 45px)
 		display: inline-block
 		margin-top: 6px
 		&:first-child
@@ -884,6 +889,7 @@ body
 	left: 100%
 	height: 100%
 	top: 0
+	overflow: hidden
 	&::after
 		content: ""
 		width: 100%
@@ -1872,3 +1878,72 @@ body
 				transition: filter 0.3s ease
 				&:hover
 					filter: grayscale(0)
+.modal-items
+	width: 100%
+	height: 100%
+	padding-left: 10%
+	padding-right: 10%
+	backface-visibility: hidden
+	display: none
+	&.open
+		display: block
+	&.out_form
+		animation: out_form 0.3s ease both
+	&.in_form
+		animation: in_form 0.3s ease both
+	.form-head	
+		+rem(margin-bottom, 52px)
+		.form-title
+			font-family: $Medium
+			+rem(font-size, 42px)
+			color: #1c1c1c
+			&:not(:only-child)
+				+rem(margin-bottom, 23px)
+		p 
+			font-family: $Book
+			+rem(font-size, 20px)
+			color: #1c1c1c
+			line-height: 1.6
+	.form-body
+		.btn
+			+rem(min-width, 140px)
+
+
+.cap
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: $maincolor
+	z-index: 1001
+	display: none
+	.cap-inner
+		+rem(width, 280px)
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		text-align: center
+		.image
+			background-image: url(../img/icons/desktop.png)
+			+rem(width, 120px)
+			+rem(height, 100px)
+			display: inline-block
+			background-size: cover
+			+rem(margin-bottom, 30px)
+		p
+			+rem(font-size, 18px)
+			+rem(margin-bottom, 30px)
+			+rem(letter-spacing, 0.9px)
+			color: $white
+		.btn
+			+rem(padding, 15px 15px)
+			span
+				+rem(font-size, 12px)
+@media screen and (min-width: 1024px) and (orientation: landscape)
+	.cap
+		display: block
+@media screen and (min-width: 1025px) and (orientation: portrait)
+	.cap
+		display: block

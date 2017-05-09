@@ -10,6 +10,9 @@
 	@media only screen and (min-width: $width+ "px")
 		@content
 
+=rm_rm($min-width, $max-width)
+	@media only screen and (min-width: $min-width+ "px") and (max-width: $max-width+ "px")
+		@content
 // height, less than X
 =rh($height)
 	@media only screen and (max-height: $height + "px")

@@ -794,13 +794,16 @@ body {
 
 .btn-slider {
   padding-left: 3px;
+  width: 7.1875rem;
+  float: right;
   *zoom: 1; }
   .btn-slider:after {
     content: " ";
     display: table;
     clear: both; }
   .btn-slider .btn-wrapp {
-    width: 45px;
+    width: 2.8125rem;
+    height: 2.8125rem;
     display: inline-block;
     margin-top: 6px; }
     .btn-slider .btn-wrapp:first-child {
@@ -1196,7 +1199,8 @@ body {
   width: 100%;
   left: 100%;
   height: 100%;
-  top: 0; }
+  top: 0;
+  overflow: hidden; }
   .groups-modals::after, .news-modals::after, .form-modals::after {
     content: "";
     width: 100%;
@@ -2256,14 +2260,94 @@ body {
         .partners .partners_list .partners_item img:hover {
           -webkit-filter: grayscale(0);
           filter: grayscale(0); }
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+.modal-items {
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: none; }
+  .modal-items.open {
+    display: block; }
+  .modal-items.out_form {
+    -webkit-animation: out_form 0.3s ease both;
+    animation: out_form 0.3s ease both; }
+  .modal-items.in_form {
+    -webkit-animation: in_form 0.3s ease both;
+    animation: in_form 0.3s ease both; }
+  .modal-items .form-head {
+    margin-bottom: 3.25rem; }
+    .modal-items .form-head .form-title {
+      font-family: "FiraSansMedium";
+      font-size: 2.625rem;
+      color: #1c1c1c; }
+      .modal-items .form-head .form-title:not(:only-child) {
+        margin-bottom: 1.4375rem; }
+    .modal-items .form-head p {
+      font-family: "FiraSansBook";
+      font-size: 1.25rem;
+      color: #1c1c1c;
+      line-height: 1.6; }
+  .modal-items .form-body .btn {
+    min-width: 8.75rem; }
+
+.cap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ac252a;
+  z-index: 1001;
+  display: none; }
+  .cap .cap-inner {
+    width: 17.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    .cap .cap-inner .image {
+      background-image: url(../img/icons/desktop.png);
+      width: 7.5rem;
+      height: 6.25rem;
+      display: inline-block;
+      background-size: cover;
+      margin-bottom: 1.875rem; }
+    .cap .cap-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.875rem;
+      letter-spacing: 0.05625rem;
+      color: #fff; }
+    .cap .cap-inner .btn {
+      padding: 0.9375rem 0.9375rem; }
+      .cap .cap-inner .btn span {
+        font-size: 0.75rem; }
+      @media only screen and (min-width: 767px) and (max-width: 991px) {
+
+  html {
+    font-size: 25px; } }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-        @media only screen and (min-width: 767px) {
+      @media screen and (min-width: 1025px) and (orientation: portrait) {
+
+  .cap {
+    display: block; } }
+      @media screen and (min-width: 1024px) and (orientation: landscape) {
+
+  .cap {
+    display: block; } }
+      @media only screen and (min-width: 992px) {
 
   html {
-    font-size: 22px; }
+    font-size: 29px; } }
+      @media only screen and (min-width: 767px) {
 
   .departament .column-100 {
     width: 50%;
@@ -2298,7 +2382,7 @@ body {
 
   .partners .partners_list .partners_item {
     width: 33.33%; } }
-        @media only screen and (min-width: 600px) {
+      @media only screen and (min-width: 600px) {
 
   .container-image .image-element {
     float: left;
@@ -2311,11 +2395,11 @@ body {
 
   .maps-wrapper .map-wrapp .img {
     background-position: 17%; } }
-        @media only screen and (max-width: 599px) {
+      @media only screen and (max-width: 599px) {
 
   .container-image .text-elements {
     padding-top: 2.0625rem; } }
-        @media only screen and (min-width: 480px) {
+      @media only screen and (min-width: 480px) {
 
   .wrapp-column [class^=column-] {
     width: 50%;
@@ -2338,7 +2422,7 @@ body {
   .scheme-oil_sales .scheme_text-container {
     left: 3.125rem;
     top: -1.25rem; } }
-        @media only screen and (max-width: 374px) {
+      @media only screen and (max-width: 374px) {
 
   html {
     font-size: 12px; } }

@@ -269,6 +269,9 @@ body {
   width: 100%;
   height: 100%; }
 
+.container-content {
+  position: relative; }
+
 .intro-head {
   position: relative;
   padding: 0 0.9375rem;
@@ -2327,27 +2330,79 @@ body {
       padding: 0.9375rem 0.9375rem; }
       .cap .cap-inner .btn span {
         font-size: 0.75rem; }
-      @media only screen and (min-width: 767px) and (max-width: 991px) {
+
+.container-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; }
+  .container-svg .svg-icon-number {
+    width: 88%;
+    position: absolute;
+    top: 8.75rem;
+    right: 0; }
+  .container-svg .svg-icon-atom {
+    width: 80%; }
+  .container-svg .svg-icon-oil {
+    width: 90%;
+    position: absolute;
+    top: 8.75rem;
+    right: -1.125rem;
+    max-width: 37.1875rem; }
+  .container-svg .svg-icon-404 {
+    position: absolute;
+    top: 11.875rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 21.875rem; }
+
+.intro-head .intro-head-container.page-not-found {
+  padding: 8.4375rem 0;
+  text-align: center;
+  font-size: 0;
+  margin-bottom: 0;
+  text-align: center; }
+  .intro-head .intro-head-container.page-not-found:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%; }
+
+.section-scroll-container {
+  position: relative; }
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
 
   html {
     font-size: 25px; } }
-      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-      @media screen and (min-width: 1025px) and (orientation: portrait) {
+
+@media screen and (min-width: 1025px) and (orientation: portrait) {
 
   .cap {
     display: block; } }
-      @media screen and (min-width: 1024px) and (orientation: landscape) {
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
 
   .cap {
     display: block; } }
-      @media only screen and (min-width: 992px) {
+
+@media only screen and (min-width: 992px) {
 
   html {
     font-size: 29px; } }
-      @media only screen and (min-width: 767px) {
+
+@media only screen and (min-width: 767px) {
 
   .departament .column-100 {
     width: 50%;
@@ -2382,7 +2437,8 @@ body {
 
   .partners .partners_list .partners_item {
     width: 33.33%; } }
-      @media only screen and (min-width: 600px) {
+
+@media only screen and (min-width: 600px) {
 
   .container-image .image-element {
     float: left;
@@ -2395,11 +2451,13 @@ body {
 
   .maps-wrapper .map-wrapp .img {
     background-position: 17%; } }
-      @media only screen and (max-width: 599px) {
+
+@media only screen and (max-width: 599px) {
 
   .container-image .text-elements {
     padding-top: 2.0625rem; } }
-      @media only screen and (min-width: 480px) {
+
+@media only screen and (min-width: 480px) {
 
   .wrapp-column [class^=column-] {
     width: 50%;
@@ -2422,7 +2480,8 @@ body {
   .scheme-oil_sales .scheme_text-container {
     left: 3.125rem;
     top: -1.25rem; } }
-      @media only screen and (max-width: 374px) {
+
+@media only screen and (max-width: 374px) {
 
   html {
     font-size: 12px; } }

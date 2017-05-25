@@ -262,7 +262,8 @@ body {
 .root_wrapper {
   height: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
 
 .root_frame {
   overflow: auto;
@@ -270,7 +271,8 @@ body {
   height: 100%; }
 
 .container-content {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .intro-head {
   position: relative;
@@ -723,12 +725,6 @@ body {
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
-  .page-link:hover .svg-full-wrapp {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
-  .page-link:hover .text-link {
-    color: #ac252a; }
 
 .news-item {
   padding: 0 15px;

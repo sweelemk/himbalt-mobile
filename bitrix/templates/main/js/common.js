@@ -10,9 +10,6 @@ function extend( a, b ) {
 
 var modalsProject, menu;
 
-
-
-
 function Menu() {
 	var _this = this;
 
@@ -317,8 +314,8 @@ Modals.prototype = {
 		// 	});	
 		// });
 		$(this.elements).on("click", function(event){
-			if(documnet.getElementsByTagName("body").classList.contains("navigation_show")){
-				documnet.getElementsByTagName("body").classList.remove("navigation_show");
+			if(document.getElementsByTagName("body")[0].classList.contains("navigation_show")){
+				document.getElementsByTagName("body")[0].classList.remove("navigation_show");
 			}
 			var value = this.getAttribute("data-modal");
 			if(value == "modal") {
@@ -472,9 +469,17 @@ function ShowMore(el, options) {
 		showText: "",
 		hideText: ""
 	};
+	this.extend = function(a, b){
+		for( var key in b ) { 
+			if( b.hasOwnProperty( key ) ) {
+				a[key] = b[key];
+			}
+		}
+		return a;
+	}
 
-	this.options = extend( {}, this.options );
-	extend( this.options, options );
+	this.options = this.extend( {}, this.options );
+	this.extend( this.options, options );
 
 	this.init();
 }

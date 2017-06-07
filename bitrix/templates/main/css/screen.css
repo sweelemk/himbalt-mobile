@@ -1006,7 +1006,8 @@ body {
     letter-spacing: 0.9px; }
 
 .pages {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   .pages.transfer-pages {
     overflow: hidden; }
   .pages.pages-out .section-scroll-container {
@@ -1448,6 +1449,22 @@ body {
         top: 0;
         left: 0; }
 
+@-webkit-keyframes AnimationGradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes AnimationGradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
 .request-access {
   display: inline-block;
   padding: 1.3125rem 0.875rem; }
@@ -1456,7 +1473,8 @@ body {
     vertical-align: middle;
     width: 1.375rem;
     height: 1.1875rem;
-    margin-right: 0.5625rem; }
+    margin-right: 0.5625rem;
+    float: left; }
     .request-access .icon svg {
       fill: #ac252a;
       -webkit-transition: fill 0.3s ease;
@@ -1467,7 +1485,6 @@ body {
     vertical-align: middle;
     letter-spacing: 0;
     border-bottom: 1px solid;
-    padding-top: 2px;
     padding-bottom: 5px;
     -webkit-transition: color 0.3s ease, border-color 0.3s ease;
     transition: color 0.3s ease, border-color 0.3s ease;
@@ -2373,32 +2390,97 @@ body {
 .section-scroll-container {
   position: relative; }
 
-@media only screen and (min-width: 767px) and (max-width: 991px) {
+.table-container table {
+  table-layout: fixed; }
+  .table-container table thead tr th {
+    color: #cdcdcd;
+    font-family: "FiraSansRegular";
+    font-size: 1.125rem;
+    padding: 1.5625rem 0;
+    border-bottom: 1px solid #d0d0d0; }
+    .table-container table thead tr th:first-child {
+      width: 15.625rem; }
+  .table-container table tbody tr td {
+    font-size: 1.125rem;
+    padding: 1.875rem 2.1875rem 1.875rem 0;
+    border-bottom: 1px solid #d0d0d0; }
+  @media only screen and (min-width: 767px) and (max-width: 991px) {
 
   html {
     font-size: 25px; } }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
+  @media only screen and (max-width: 1150px) {
 
-@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .table-container table thead {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden; }
+
+  .table-container table thead tr th {
+    display: block; }
+
+  .table-container table tbody {
+    display: block; }
+
+  .table-container table tbody tr {
+    margin-bottom: 2.8125rem; }
+
+  .table-container table tbody tr:not(:last-child) {
+    border: none; }
+
+  .table-container table tbody tr td {
+    display: block;
+    padding: 1.25rem 0.625rem 1.25rem 9.375rem;
+    position: relative;
+    border-bottom: 1px solid #d0d0d0; }
+
+  .table-container table tbody tr td::before {
+    content: attr(data-title);
+    text-align: left;
+    float: left;
+    width: 8.75rem;
+    position: absolute;
+    left: 0.625rem;
+    color: #858585; }
+
+  .table-container table tbody tr th {
+    padding: 1.25rem 0.625rem;
+    border-bottom: 2px solid #d0d0d0; }
+
+  .table-container table tbody tr th .title {
+    font-size: 1rem;
+    text-align: left; }
+
+  .table-container table tr {
+    display: block; }
+
+  .table-container table th {
+    display: block; } }
+  @media only screen and (min-width: 1150px) {
+
+  .table-container table tbody tr td:first-child {
+    color: #858585; } }
+  @media screen and (min-width: 1025px) and (orientation: portrait) {
 
   .cap {
     display: block; } }
-
-@media screen and (min-width: 1024px) and (orientation: landscape) {
+  @media screen and (min-width: 1024px) and (orientation: landscape) {
 
   .cap {
     display: block; } }
-
-@media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
 
   html {
     font-size: 29px; } }
-
-@media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 767px) {
 
   .departament .column-100 {
     width: 50%;
@@ -2433,8 +2515,7 @@ body {
 
   .partners .partners_list .partners_item {
     width: 33.33%; } }
-
-@media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
 
   .container-image .image-element {
     float: left;
@@ -2447,13 +2528,11 @@ body {
 
   .maps-wrapper .map-wrapp .img {
     background-position: 17%; } }
-
-@media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 599px) {
 
   .container-image .text-elements {
     padding-top: 2.0625rem; } }
-
-@media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 480px) {
 
   .wrapp-column [class^=column-] {
     width: 50%;
@@ -2476,8 +2555,7 @@ body {
   .scheme-oil_sales .scheme_text-container {
     left: 3.125rem;
     top: -1.25rem; } }
-
-@media only screen and (max-width: 374px) {
+  @media only screen and (max-width: 374px) {
 
   html {
     font-size: 12px; } }

@@ -1646,10 +1646,22 @@ body {
     left: 0; }
 
 .wrapp-column .icon-svg-wrapp {
-  width: 8.75rem;
-  margin-bottom: 0.9375rem; }
+  height: 6.25rem;
+  margin-bottom: 0.9375rem;
+  text-align: center;
+  font-size: 0; }
   .wrapp-column .icon-svg-wrapp img {
     max-width: 100%; }
+  .wrapp-column .icon-svg-wrapp:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%; }
+  .wrapp-column .icon-svg-wrapp svg {
+    display: inline-block;
+    vertical-align: bottom;
+    height: auto; }
 
 .wrapp-column.wrap-columns-center {
   text-align: center; }

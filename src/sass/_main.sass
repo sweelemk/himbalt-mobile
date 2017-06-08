@@ -1308,10 +1308,16 @@ body
 			vertical-align: top
 			+rem(margin-right, -4px)
 	.icon-svg-wrapp
-		+rem(width, 140px)
+		// +rem(width, 140px)
+		+rem(height, 100px)
 		+rem(margin-bottom, 15px)
 		img
 			max-width: 100%
+		+vertical
+		svg
+			display: inline-block
+			vertical-align: bottom
+			height: auto
 	&.wrap-columns-center
 		text-align: center
 		& > div

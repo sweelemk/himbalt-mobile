@@ -12,8 +12,9 @@ block content
 						.section-scroll.js-ajx(data-pages="false")
 							article.container-content
 								.maps-wrapper
-									div.map-wrapp
-										.img(style="background-image: url(img/map.jpg);")
+									div.map-wrapp#map(data-coord="57.0162005,24.1228066")
+										script(type="text/javascript").
+											$(googleMaps);
 									section.intro-head
 										.logo-container
 											- var Index = true

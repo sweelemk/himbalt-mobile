@@ -2416,15 +2416,27 @@ body {
     font-size: 1.125rem;
     padding: 1.875rem 2.1875rem 1.875rem 0;
     border-bottom: 1px solid #d0d0d0; }
-  @media only screen and (min-width: 767px) and (max-width: 991px) {
+
+.maps-wrapper .gm-bundled-control {
+  bottom: 8.125rem;
+  top: auto !important; }
+
+.map-content {
+  width: 100%;
+  height: 21.875rem;
+  margin-bottom: 3.125rem; }
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
 
   html {
     font-size: 25px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-  @media only screen and (max-width: 1150px) {
+
+@media only screen and (max-width: 1150px) {
 
   .table-container table thead {
     position: absolute;
@@ -2476,23 +2488,28 @@ body {
 
   .table-container table th {
     display: block; } }
-  @media only screen and (min-width: 1150px) {
+
+@media only screen and (min-width: 1150px) {
 
   .table-container table tbody tr td:first-child {
     color: #858585; } }
-  @media screen and (min-width: 1025px) and (orientation: portrait) {
+
+@media screen and (min-width: 1025px) and (orientation: portrait) {
 
   .cap {
     display: block; } }
-  @media screen and (min-width: 1024px) and (orientation: landscape) {
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
 
   .cap {
     display: block; } }
-  @media only screen and (min-width: 992px) {
+
+@media only screen and (min-width: 992px) {
 
   html {
     font-size: 29px; } }
-  @media only screen and (min-width: 767px) {
+
+@media only screen and (min-width: 767px) {
 
   .departament .column-100 {
     width: 50%;
@@ -2527,7 +2544,8 @@ body {
 
   .partners .partners_list .partners_item {
     width: 33.33%; } }
-  @media only screen and (min-width: 600px) {
+
+@media only screen and (min-width: 600px) {
 
   .container-image .image-element {
     float: left;
@@ -2540,11 +2558,13 @@ body {
 
   .maps-wrapper .map-wrapp .img {
     background-position: 17%; } }
-  @media only screen and (max-width: 599px) {
+
+@media only screen and (max-width: 599px) {
 
   .container-image .text-elements {
     padding-top: 2.0625rem; } }
-  @media only screen and (min-width: 480px) {
+
+@media only screen and (min-width: 480px) {
 
   .wrapp-column [class^=column-] {
     width: 50%;
@@ -2567,7 +2587,8 @@ body {
   .scheme-oil_sales .scheme_text-container {
     left: 3.125rem;
     top: -1.25rem; } }
-  @media only screen and (max-width: 374px) {
+
+@media only screen and (max-width: 374px) {
 
   html {
     font-size: 12px; } }

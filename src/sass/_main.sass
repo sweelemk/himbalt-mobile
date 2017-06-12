@@ -1928,8 +1928,37 @@ body
 	.form-body
 		.btn
 			+rem(min-width, 140px)
-
-
+		.cross-modal
+			+rem(padding-left, 22px)
+			cursor: pointer
+			position: relative
+			i
+				position: absolute
+				+rem(width, 9px)
+				+rem(height, 9px)
+				left: 0
+				+rem(top, 6px)
+				svg
+					position: absolute
+					top: 0
+					left: 0
+					fill: $maincolor
+					transition: fill 0.3s ease
+					+rem(width, 9px)
+					+rem(height, 9px)
+			span
+				+rem(font-size, 16px)
+				color: $maincolor
+				border-bottom: 1px solid
+				+rem(padding-bottom, 3px)
+				transition: color 0.3s ease, border-color 0.3s ease
+			&:hover
+				i
+					svg
+						fill: $dark
+				span
+					border-color: transparent
+					color: $dark
 .cap
 	position: absolute
 	top: 0

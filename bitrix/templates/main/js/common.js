@@ -361,11 +361,9 @@ Modals.prototype = {
 		this.body.classList.add(this.options.openClass);
 		this.goalElement = document.querySelector("[data-modals=" + goal_modal + "]");
 		
-		
 		if(options_modal) {
 			this.optionsElement = document.getElementById(options_modal);
 			this.optionsElement.classList.add("open");
-			formscroll.scrollUpdate();
 		}
 		this.goalElement.classList.add(this.options.openClassElements);
 		this.goalElement.classList.add(this.options.showModal);
@@ -376,7 +374,6 @@ Modals.prototype = {
 		var self = this;
 		this.body.classList.remove(this.options.openClass);
 		this.modals.forEach(function(el){
-			console.log(el)
 			el.classList.remove(self.options.openClassElements);
 		});
 		setTimeout(function(){
@@ -452,7 +449,6 @@ Modals.prototype = {
 				setTimeout(function(){
 					next.removeClass("in_form");
 				}, 300);
-				formscroll.scrollUpdate();
 			}
 			_.off("animationend");
 		});

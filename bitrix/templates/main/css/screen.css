@@ -2426,6 +2426,9 @@ body {
   height: 21.875rem;
   margin-bottom: 3.125rem; }
 
+.map-container + .map-content {
+  height: auto; }
+
 @media only screen and (min-width: 767px) and (max-width: 991px) {
 
   html {

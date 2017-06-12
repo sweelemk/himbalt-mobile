@@ -1992,17 +1992,7 @@ body {
     top: 1.3125rem; }
   .field-row .btn {
     margin-top: 1.4375rem;
-    min-width: 10.625rem;
-    background: none;
-    background-color: #ac252a;
-    -webkit-animation: none;
-    animation: none;
-    -webkit-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease; }
-    .field-row .btn:hover {
-      background-color: #991217; }
-    .field-row .btn::after {
-      content: none; }
+    min-width: 10.625rem; }
   .field-row .register {
     float: right;
     margin-top: 1.4375rem;

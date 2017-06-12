@@ -505,9 +505,10 @@ body {
     .account .account-enter .icon {
       width: 100%;
       height: 100%;
-      display: block;
-      background-image: url(../img/icons/personal-account.png);
-      background-size: contain; }
+      display: block; }
+      .account .account-enter .icon svg {
+        width: 27px;
+        height: 25px; }
 
 .menu-elements {
   padding: 6.9375rem 0; }
